@@ -117,6 +117,7 @@ import sys
 import nuke
 import os
 import shutil
+import webbrowser
 import subprocess
 import platform
 from pathlib import Path
@@ -1053,6 +1054,7 @@ def show_installer():
     dlg.exec_() #if PYSIDE_VERSION == 2 else dlg.exec()
 
 #show_installer()
+
 
 
 
