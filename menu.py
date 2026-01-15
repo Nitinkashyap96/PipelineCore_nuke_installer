@@ -48,4 +48,5 @@ github_menu.addCommand(
 
 
 license ="Copyright (C) 2025 by Nitin Kashyap,All rights reserved."
-nuke.tprint(f"PipelineCore_nuke_installer {version},  build  {update_date}. \n{license}")
+
+nuke.tprint(f"PipelineCore_nuke_installer_2 {version},  build  {update_date}. \n{license}")
