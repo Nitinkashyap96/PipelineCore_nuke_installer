@@ -10,8 +10,8 @@
 
 """
 ======================================================================================
-# Tool Name      : <PipelineCore_nuke_installer_v1.2.1>
-# Version        : 1.2.1
+# Tool Name      : <PipelineCore_nuke_installer_v2.0.0>
+# Version        : 2.0.0
 #
 # Author         : Nitin Kashyap
 # Contact        : <email / github >>"https://github.com/Nitinkashyap96/ViewerToggle-for-in_Nuke" 
@@ -104,7 +104,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 __tool_name__ = "PipelineCore_nuke_installer"
-__version__ = "1.2.1"
+__version__ = "2.0.0"
 __author__ = "Nitin Kashyap"
 
 
@@ -125,7 +125,7 @@ from pathlib import Path
 
 # ----------------- Installer Version Info -----------------
 INSTALLER_NAME = "GitHub Tools Installer for Nuke"
-INSTALLER_VERSION = "1.2.1"
+INSTALLER_VERSION = "2.0.0"
 INSTALLER_GITHUB_USER = "Nitinkashyap96"
 INSTALLER_GITHUB_REPO = "PipelineCore_nuke_installer"
 INSTALLER_GITHUB_URL = f"https://github.com/{INSTALLER_GITHUB_USER}/{INSTALLER_GITHUB_REPO}"
@@ -1054,6 +1054,7 @@ def show_installer():
     dlg.exec_() #if PYSIDE_VERSION == 2 else dlg.exec()
 
 #show_installer()
+
 
 
 
