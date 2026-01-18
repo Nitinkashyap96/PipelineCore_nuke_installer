@@ -828,13 +828,13 @@ class GithubNukeInstaller(QDialog):
             f'</span>'
         )
 
-        #msg.exec_()
+        msg.exec_()
         #QMessageBox.restart_nuke
-        QMessageBox.information(
-            self,
-            "Install Complete",
-            "Plugin installed successfully.\nNuke must be restarted to apply changes."
-        )
+        # QMessageBox.information(
+        #     self,
+        #     "Install Complete",
+        #     "Plugin installed successfully.\nNuke must be restarted to apply changes."
+        # )
 
         self.restart_nuke()
 
@@ -1054,6 +1054,7 @@ def show_installer():
     dlg.exec_() #if PYSIDE_VERSION == 2 else dlg.exec()
 
 #show_installer()
+
 
 
 
