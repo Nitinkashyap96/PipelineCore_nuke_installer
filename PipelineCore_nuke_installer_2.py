@@ -822,7 +822,7 @@ class GithubNukeInstaller(QDialog):
 
         msg.setTextFormat(Qt.RichText)
         msg.setText(
-            f'<span style="color:{hex_color}; font-size:19px;">'
+            f'<span style="color:{hex_color}; font-size:23px; font-weight: bold; ">'
             f'  {repo_name} installed successfully!<br>'
             f'  Restart Nuke to load the plugin.'
             f'</span>'
@@ -1054,6 +1054,7 @@ def show_installer():
     dlg.exec_() #if PYSIDE_VERSION == 2 else dlg.exec()
 
 #show_installer()
+
 
 
 
