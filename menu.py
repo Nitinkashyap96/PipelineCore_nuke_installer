@@ -3,7 +3,7 @@ import os
 import datetime
 
 
-version= "v1.2.1"
+version= "v2.0.0"
 update_date= "25 December 2025"
 
 
@@ -50,5 +50,6 @@ github_menu.addCommand(
 
 license ="Copyright (C) 2025 by Nitin Kashyap,All rights reserved."
 nuke.tprint(f"PipelineCore_nuke_installer_2 {version},  build  {update_date}. \n{license}")
+
 
 
