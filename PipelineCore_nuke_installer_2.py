@@ -374,25 +374,6 @@ class GithubNukeInstaller(QDialog):
         self.init_ui()
         self.set_connections()
 
-#    # -------- Divider --------
-#    def divider(self, text):
-#        line = QFrame()
-#        line.setFrameShape(QFrame.HLine)
-#        line.setStyleSheet("background:#444;")
-#
-#        label = QLabel(text)
-#        label.setAlignment(Qt.AlignCenter)
-#        label.setStyleSheet("color:#9c9c9c;font-size:12px;padding:4px;")
-#
-#        box = QVBoxLayout()
-#        box.addWidget(line)
-#        box.addWidget(label)
-#        box.addWidget(line)
-#
-#        frame = QFrame()
-#        frame.setLayout(box)
-#        return frame
-
     def init_ui(self):
         self.setStyleSheet("QDialog{background:#171717;} QLabel{color:white;}")
         layout = QVBoxLayout(self)
@@ -496,25 +477,6 @@ class GithubNukeInstaller(QDialog):
         }
         """)
         
-        # restart_button
-        # self.restart_button = QPushButton("Restart Nuke")
-        # self.restart_button.setEnabled(False)  # IMPORTANT
-        # self.restart_button.setStyleSheet("""
-        # QPushButton {
-        #     background-color:#8e44ad;
-        #     color:white;
-        #     font-weight:bold;
-        #     font-size:16px;
-        #     padding:10px 22px;
-        #     border-radius:8px;
-        # }
-        # QPushButton:hover { background-color:#9b59b6; }
-        # QPushButton:pressed { background-color:#5e3370; }
-        # QPushButton:disabled {
-        #     background-color:#333333;
-        #     color:#777777;
-        # }
-        # """)
         line = QFrame()
         line.setFrameShape(QFrame.HLine)
         line.setStyleSheet("color:#333333;")
@@ -718,11 +680,6 @@ class GithubNukeInstaller(QDialog):
 
         # Ask to restart
     def restart_nuke(self):
-        # import subprocess
-        # import platform
-        # import nuke
-        # import os
-
         if not nuke.ask("Restart Nuke now?"):
             return
 
@@ -762,18 +719,6 @@ class GithubNukeInstaller(QDialog):
                 cmd.append(script_path)
 
             subprocess.Popen(cmd)
-
-        # else:  # Linux
-        #     cmd = ["nukex" if is_nukex else "nuke"]
-
-        #     if reopen_script:
-        #         cmd.append(script_path)
-
-        #     subprocess.Popen(cmd)
-
-        # # Exit current Nuke safely
-        # nuke.scriptExit()
-
         else:  # Linux
                     # Instead of just "nukex", use the full path provided by Nuke
                     if exe_path and os.path.exists(exe_path):
@@ -843,13 +788,6 @@ class GithubNukeInstaller(QDialog):
         )
 
         msg.exec_()
-        #QMessageBox.restart_nuke
-        # QMessageBox.information(
-        #     self,
-        #     "Install Complete",
-        #     "Plugin installed successfully.\nNuke must be restarted to apply changes."
-        # )
-
         self.restart_nuke()
 
 
@@ -860,61 +798,7 @@ class GithubNukeInstaller(QDialog):
         self.status_label.setText("Done!")
         self.install_button.setEnabled(False)
         self.restart_button.setEnabled(True)
-
-
-
-        #Test Nitin Codes#####################################
-
-    # def install(self):
-    #     if not ensure_git(self):
-    #         return
-
-    #     ref = self.ref_select.currentText()
-    #     dest = self.install_folder.text()
-    #     target_version = self.nuke_version_select.currentText()
-    #     restrict_major = self.major_checkbox.isChecked()
-
-    #     repo_name = Path(self.repo_url.text()).stem if self.repo_url.text() else "plugin"
-
-    #     def force_remove(path):
-    #         def onerror(func, path, exc_info):
-    #             os.chmod(path, 0o777)
-    #             func(path)
-    #         if os.path.exists(path):
-    #             shutil.rmtree(path, onerror=onerror)
-
-    #     if os.path.exists(dest):
-    #         if not nuke.ask(f"Folder exists:\n{dest}\nDelete and reinstall?"):
-    #             return
-    #         force_remove(dest)
-
-    #     clone_repo(self.repo_url.text().strip(), dest, ref)
-    #     register_nuke_plugin_path(dest, target_version, restrict_major)
-
-    #     # QMessageBox.information(self, "Success", f"{repo_name} installed successfully!\nRestart Nuke to load the plugin.")
-    #     msg = QMessageBox(self)
-    #     msg.setWindowTitle("Success")
-    #     msg.setIcon(QMessageBox.Information)
-
-    #     hex_color = "#008000"
-
-    #     msg.setTextFormat(Qt.RichText)
-    #     msg.setText(
-    #         f'<span style="color:{hex_color}; font-size:19px;">'
-    #         f'  {repo_name} installed successfully!<br>'
-    #         f'  Restart Nuke to load the plugin.'
-    #         f'</span>'
-    #     )
-
-    #     msg.exec_()
-
-    #     Play_Render_Sound()
-    #     self.status_label.setText("Done!")
-    #     self.install_button.setEnabled(False)
-
-
-    #Test Nitin Codes#####################################
-
+        
     #import webbrowser  # Add at the top with other imports
     
     def check_for_updates(self):
@@ -1055,12 +939,6 @@ class GithubNukeInstaller(QDialog):
             )
             webbrowser.open(INSTALLER_GITHUB_URL)
 
-
-
-
-
-
-
 # ----------------- Launch -----------------
 def show_installer():
     dlg = GithubNukeInstaller()
@@ -1068,6 +946,7 @@ def show_installer():
     dlg.exec_() #if PYSIDE_VERSION == 2 else dlg.exec()
 
 #show_installer()
+
 
 
 
