@@ -27,9 +27,14 @@
 </h1>
 
 
+
 # Install   : Git 
 
-https://git-scm.com/
+https://git-scm.com/install/windows
+
+    Platform       : Windows / Linux / macOS
+
+
 
 
 
