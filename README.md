@@ -35,35 +35,125 @@ HI im Nitin Kashyap   VFX Compositor
 
     git clone https://github.com/Nitinkashyap96/Pipeline-Tools-nuke_installer.git
 
-Add menu entry in init.py
-# Place this in your ~/.nuke/init.py file  Copy & Paste hit save  Restart Nuke
+(( The plugin installer you are using is an intermediate-to-advanced-level VFX tool. Here's why: ))
+
+Installation
+
+    nuke.pluginAddPath(r"./PipelineCore_nuke_installer")
+What the installer does (Overview)
+
+Your installer is a pipeline utility that allows artists or TDs to:
+
+Install Nuke plugins directly from GitHub
+
+Select Branch or Release (Tag)
+
+Install plugins into version-specific Nuke folders
+
+Automatically register plugin paths in init.py
+
+Open plugin folders in file explorer
+
+Update the installer from GitHub
 
 
 
+#################################################################################
 
-#######################################################################################################
+    Platform       : Windows / Linux / macOS
+    
+    Python : 3.10
+    
+    Python : 3.11
+                                            
+    Tested on with Nuke (12+ / 13+ / 14+ / 15+ / 16+ )
+#################################################################################
 
-nuke.pluginAddPath(r"./PipelineCore_nuke_installer")
-
-#######################################################################################################
-
+# Step Paste GitHub repository URL
+Example:
   
+    https://github.com/username/repository.git
+# Internal behavior
+  
+      Validates .git URL
+      
+      Enables version fetching
+      
+      Step Select download type
+      
+      User selects:
+      
+      Branch → main, dev, etc.
+      
+      Release → GitHub tags (v1.0, v2.1)
+      
+      Code logic
+      
+      Step Select repository version
+      
+      Dropdown is populated with:
+      
+      Branch names or
+      
+      Tag names
+      
+      The Install button becomes enabled once:
+      
+      A valid version is selected
+      
+      Install path is valid
+      
+      3. Nuke version handling
+      
+      The installer reads the running Nuke version:
+      
+      nuke.NUKE_VERSION_MAJOR
+      nuke.NUKE_VERSION_MINOR
+
+#####################################################################################
+
+ # Folder structure created automatically
+  # Example:
+  
+        Nuke 15.1
+        Folder structure created automatically
+        
+        Plugins are installed per-version to avoid conflicts:
+        
+        ~/.nuke/
+         └── VFX Pipeline Tools/
+             └── Nuke15.1/
+                 └── PluginName/
+        This allows:
+        
+        Multiple Nuke versions on the same machine
+        
+        Clean pipeline isolation
+        
+        Default install path logic
+        
+        If the user does not override the folder:
+        
+        ~/.nuke/VFX Pipeline Tools/Nuke{version}/{repo_name}
+        Example:
+        
+        ~/.nuke/VFX Pipeline Tools/Nuke15.1/Stamps
+        7. Register plugin path in Nuke
+        
+        The installer updates:
+        
+        ~/.nuke/init.py
+        Major-restricted install
+        
+        if nuke.NUKE_VERSION_MAJOR == 15:
+            nuke.pluginAddPath("path")
+        Global install
+        
+        nuke.pluginAddPath("path")
+        This ensures the plugin loads automatically when Nuke starts.
 
 
-
-Platform       : Windows / Linux / macOS
-
-Python : 3.10
-
-Python : 3.11
-                                        
-Tested on with Nuke (12+ / 13+ / 14+ / 15+ / 16+ )
-
-
-
-
-
-
+#####################################################################################
 
 
 
@@ -95,5 +185,5 @@ Tested on with Nuke (12+ / 13+ / 14+ / 15+ / 16+ )
 
 
 
-
+  
 # Nuke init.py Automatic path add
