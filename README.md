@@ -1,6 +1,7 @@
 
 # Pipeline-Tools-nuke_installer
-HI im Nitin Kashyap   VFX Compositor
+# HI im Nitin Kashyap A / junior Lighting and Compositing Artist
+
 
 
 ![Nuke](https://img.shields.io/badge/Nuke-Compatible-Green)
@@ -26,9 +27,12 @@ HI im Nitin Kashyap   VFX Compositor
 </h1>
 
 
+# Install   : Git 
+
+https://git-scm.com/
 
 
-# add Restart_Nuke Button
+
 
 # Installation   :
 
@@ -37,24 +41,27 @@ HI im Nitin Kashyap   VFX Compositor
 
 (( The plugin installer you are using is an intermediate-to-advanced-level VFX tool. Here's why: ))
 
-Installation
+Installation init.py entry
 
     nuke.pluginAddPath(r"./PipelineCore_nuke_installer")
-What the installer does (Overview)
 
-Your installer is a pipeline utility that allows artists or TDs to:
+#################################################################################
 
-Install Nuke plugins directly from GitHub
+# What the installer does (Overview)
 
-Select Branch or Release (Tag)
-
-Install plugins into version-specific Nuke folders
-
-Automatically register plugin paths in init.py
-
-Open plugin folders in file explorer
-
-Update the installer from GitHub
+    Your installer is a pipeline utility that allows artists or TDs to:
+    
+    Install Nuke plugins directly from GitHub
+    
+    Select Branch or Release (Tag)
+    
+    Install plugins into version-specific Nuke folders
+    
+    Automatically register plugin paths in init.py
+    
+    Open plugin folders in file explorer
+    
+    Update the installer from GitHub
 
 
 
@@ -187,3 +194,6 @@ Example:
 
   
 # Nuke init.py Automatic path add
+
+
+# Nitin Kashyap A / junior Lighting and Compositing Artist 
